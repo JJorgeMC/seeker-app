@@ -23,25 +23,25 @@ class DisappearanceItem extends StatelessWidget {
       Status.Found: 'ENCONTRADO',
       Status.Missing: 'DESAPARECIDO',
     };
-    return InkWell(
-      borderRadius: BorderRadius.circular(18),
-      splashColor: Color(0xFF525174),
+    return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(DisappearanceDetailScreen.routeName);
       },
       child: Card(
-        elevation: 2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           children: [
             ClipRRect(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(10),
+              ),
               child: FadeInImage(
-                placeholder:
-                    AssetImage('assets/images/user-icon-placeholder.png'),
-                image: NetworkImage(imageUrl),
-                fit: BoxFit.contain,
+                placeholder: AssetImage('assets/images/placeholder-image.png'),
+                image:
+                    NetworkImage('https://via.placeholder.com/100' ?? imageUrl),
+                fit: BoxFit.cover,
                 height: 100,
                 width: double.infinity,
               ),

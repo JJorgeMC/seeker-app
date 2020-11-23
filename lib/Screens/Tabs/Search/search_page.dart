@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:seeker_app/Screens/Tabs/Search/widgets/disappearance_item.dart';
 import 'package:seeker_app/models/disappearance.dart';
+import 'package:seeker_app/widgets/text_field_container.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key key}) : super(key: key);
@@ -29,15 +30,9 @@ class SearchPage extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(left: 25, right: 5),
-              alignment: Alignment.center,
-              height: 50,
-              decoration: BoxDecoration(
-                color: Color(0xFFF2F2F2),
-                borderRadius: BorderRadius.circular(15),
-              ),
+            TextFieldContainer(
               child: TextField(
+                textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
                     suffixIcon: GestureDetector(
                       onTap: () {},

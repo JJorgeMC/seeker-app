@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seeker_app/Screens/DisappearanceDetail/widgets/contact_modal.dart';
 import 'package:seeker_app/Screens/DisappearanceDetail/widgets/disappearance_header.dart';
 import 'package:seeker_app/models/disappearance.dart';
 import 'package:seeker_app/widgets/rounded_button.dart';
@@ -86,7 +87,20 @@ class DisappearanceDetailScreen extends StatelessWidget {
                   ),
                   RoundedButton(
                     text: 'CONTACTOS',
-                    press: () {},
+                    press: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (ctx) {
+                          return ContactModal(
+                            firstname: 'Jorge Daniel',
+                            lastname: 'Maquera Canales',
+                            email: 'porcarlos@gmail.com',
+                            phoneNumber: '993504601',
+                            relation: Relation.Friend,
+                          );
+                        },
+                      );
+                    },
                   ),
                 ],
               ),
